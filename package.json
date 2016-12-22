@@ -1,5 +1,5 @@
 {
-  "name": "demo",
+  "name": "emergency-numbers",
   "version": "1.0.0",
   "description": "attempt to learn how to make restful api with nodejs",
   "scripts": {
