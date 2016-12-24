@@ -1,34 +1,30 @@
+var mongodb = require('mongodb').MongoClient;
+var assert = require('assert');
+var ObjectId = require('mongodb').ObjectID;
+
 var appRouter = function(app) {
 	// body...
-	app.get("/", function(req,res) {
+	var url = 'mongodb://localhost:27017/numbers';
+	mongodb.connect(url, function(err, db) {
 		// body...
-		res.send("Hello World!");
+		assert.equal(null,err);
+		console.log("Connected to db server.");
+
+		app.get("/", function(req,res) {
+			// body...
+			res.send("Hello World!");
+		});
+			
+		app.get("/countries", function(req, res) {
+			// body...
+			var out = JSON.stringify(db.collection('countries').findOne({"name":"India"})); 
+			res.send(out);
+		});
+
+		db.close();
 	});
 
-	app.get("/account", function(req,res) {
-		// body...
-		var accountMock = {
-	        "username": "nraboy",
-	        "password": "1234",
-	        "twitter": "@nraboy"
-    	}
-		if(!req.query.username) {
-			return res.send({"status":"error","message":"missing username"});
-		} else if (req.query.username != accountMock.username) {
-			return res.send({"status": "error","message":"wrong username"});
-		} else {
-			return res.send(accountMock);
-		}
-	});
 
-	app.post("/account", function(req,res) {
-		// body...
-		if (!req.body.username || !req.body.password || !req.body.twtter) {
-			return res.send({"status":"error","message":"missing a parameter"});
-		} else {
-			return res.send(req.body);
-		}
-	});
 }
 
 module.exports = appRouter;
