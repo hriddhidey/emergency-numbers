@@ -14,7 +14,7 @@ var appRouter = function(app) {
 			// body...
 			res.send("Hello World!");
 		});
-			
+
 		app.get("/countries", function(req, res) {
 			// body...
 			var out = JSON.stringify(db.collection('countries').findOne({"name":"India"})); 

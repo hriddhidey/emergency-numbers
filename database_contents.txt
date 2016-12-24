@@ -1,0 +1,41 @@
+{
+        "_id" : ObjectId("585e483e685b0f86e7d964de"),
+        "name" : "India",
+        "all" : "112",
+        "police" : "100",
+        "ambulance" : "102",
+        "fire" : "101",
+        "notes" : ""
+}
+{
+        "_id" : ObjectId("585e572b0da4623bbaf3a5ff"),
+        "name" : "Bangladesh",
+        "all" : "",
+        "police" : "999",
+        "ambulance" : "199",
+        "fire" : "199",
+        "notes" : ""
+}
+{
+        "_id" : ObjectId("585e573f0da4623bbaf3a600"),
+        "name" : "France",
+        "all" : "112",
+        "police" : "17",
+        "ambulance" : "15",
+        "fire" : "18",
+        "notes" : ""
+}
+{
+        "_id" : ObjectId("585e57550da4623bbaf3a601"),
+        "name" : "Spain",
+        "all" : "112",
+        "police" : [
+                "091",
+                "092"
+        ],
+        "ambulance" : "061",
+        "fire" : "080",
+        "notes" : ""
+}
+
+Ignore the _id attributes. Copied this from my mongo shell.
