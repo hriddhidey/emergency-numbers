@@ -13,15 +13,24 @@ var appRouter = function(app) {
 		app.get("/", function(req,res) {
 			// body...
 			res.send("Hello World!");
+			
 		});
 
 		app.get("/countries", function(req, res) {
 			// body...
-			var out = JSON.stringify(db.collection('countries').findOne({"name":"India"})); 
-			res.send(out);
+			if(req.query.name == null) res.send("Incorrect or missing query parameters.");
+			else {
+				var name = req.query.name;
+				db.collection('countries').findOne({"name":name}, function(err, doc) {
+					// body...
+					if(doc == null) console.log("Sorry! \n"+err);
+					else {
+						res.send(JSON.stringify(doc));
+					}
+				});
+			}
+			
 		});
-
-		db.close();
 	});
 
 
