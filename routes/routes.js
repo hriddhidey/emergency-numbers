@@ -49,8 +49,14 @@ var appRouter = function(app) {
 
 			db.collection('countries').insertOne(country, function(err, response) {
 				// body...
-				if(err) console.log(err);
-				else console.log(response);
+				if(err) {
+					console.log(err);
+					res.send("Sorry! Unable to insert. :(");
+				}
+				else {
+					console.log(response);
+					res.send("Inserted!");
+				}
 			});
 		});
 	});
