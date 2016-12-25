@@ -1,5 +1,11 @@
+
+**___ DO NOT CHANGE THESE __**
+------------------------------
+Database name : numbers
+Collection name : countries
+------------------------------
+
 {
-        "_id" : ObjectId("585e483e685b0f86e7d964de"),
         "name" : "India",
         "all" : "112",
         "police" : "100",
@@ -7,8 +13,8 @@
         "fire" : "101",
         "notes" : ""
 }
+
 {
-        "_id" : ObjectId("585e572b0da4623bbaf3a5ff"),
         "name" : "Bangladesh",
         "all" : "",
         "police" : "999",
@@ -16,8 +22,8 @@
         "fire" : "199",
         "notes" : ""
 }
+
 {
-        "_id" : ObjectId("585e573f0da4623bbaf3a600"),
         "name" : "France",
         "all" : "112",
         "police" : "17",
@@ -25,8 +31,8 @@
         "fire" : "18",
         "notes" : ""
 }
+
 {
-        "_id" : ObjectId("585e57550da4623bbaf3a601"),
         "name" : "Spain",
         "all" : "112",
         "police" : [
@@ -38,4 +44,40 @@
         "notes" : ""
 }
 
-Ignore the _id attributes. Copied this from my mongo shell.
+{
+        "name" : "USA",
+        "all" : "911",
+        "police" : "",
+        "ambulance" : "",
+        "fire" : "",
+        "notes" : ""
+}
+
+{
+        "name" : "Mexico",
+        "all" : ["911","066"],
+        "police" : "066",
+        "ambulance" : "066",
+        "fire" : "066",
+        "notes" : ""
+}
+
+{
+        "name" : "Argentina",
+        "all" : "911",
+        "police" : "101",
+        "ambulance" : "107",
+        "fire" : "100",
+        "notes" : ["Civil defense - 103","Forest fire - 105","Coast guard - 106","112 redirects to 911 on mobile phones."]
+}
+
+{
+        "name" : "Syria",
+        "all" : "",
+        "police" : "112",
+        "ambulance" : "110",
+        "fire" : "113",
+        "notes" : ""
+}
+
+Use these to enter details into your own dB. Ez copy paste. :)

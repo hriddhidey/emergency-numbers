@@ -28,8 +28,30 @@ var appRouter = function(app) {
 						res.send(JSON.stringify(doc));
 					}
 				});
+			}	
+		});
+
+		app.post("/countries", function(req, res) {
+			var country = {
+				name : "",
+				all : "",
+				police : "",
+		        ambulance : "",
+		        fire : "",
+		        notes : "" 
 			}
-			
+			country.name = req.body.name;
+			country.all = req.body.all;
+			country.police = req.body.police;
+			country.ambulance = req.body.ambulance ;
+			country.fire = req.body.fire;
+			country.notes = req.body.notes;
+
+			db.collection('countries').insertOne(country, function(err, response) {
+				// body...
+				if(err) console.log(err);
+				else console.log(response);
+			});
 		});
 	});
 
